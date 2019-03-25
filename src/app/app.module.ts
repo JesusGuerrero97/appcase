@@ -11,6 +11,7 @@ import {UsersPage} from "../pages/users/users";
 import {UserProfileComponent} from "../components/user-profile/user-profile";
 import {UserActivitiesComponent} from "../components/user-activities/user-activities";
 import {UserConfigComponent} from "../components/user-config/user-config";
+import { SignUpPage } from '../pages/sign-up/sign-up';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import {UserConfigComponent} from "../components/user-config/user-config";
     HomePage,
     LoginPage,
     UsersPage,
+    SignUpPage,
     UserProfileComponent,
     UserConfigComponent,
     UserActivitiesComponent
@@ -32,6 +34,7 @@ import {UserConfigComponent} from "../components/user-config/user-config";
     MyApp,
     HomePage,
     LoginPage,
+    SignUpPage,
     UsersPage,
     UserProfileComponent,
     UserConfigComponent,
