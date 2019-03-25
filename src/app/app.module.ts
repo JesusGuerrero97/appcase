@@ -8,13 +8,20 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {LoginPage} from "../pages/login/login";
 import {UsersPage} from "../pages/users/users";
+import {UserProfileComponent} from "../components/user-profile/user-profile";
+import {UserActivitiesComponent} from "../components/user-activities/user-activities";
+import {UserConfigComponent} from "../components/user-config/user-config";
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
-    UsersPage
+    UsersPage,
+    UserProfileComponent,
+    UserConfigComponent,
+    UserActivitiesComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +32,10 @@ import {UsersPage} from "../pages/users/users";
     MyApp,
     HomePage,
     LoginPage,
-    UsersPage
+    UsersPage,
+    UserProfileComponent,
+    UserConfigComponent,
+    UserActivitiesComponent
   ],
   providers: [
     StatusBar,
