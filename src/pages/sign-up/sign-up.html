@@ -11,5 +11,45 @@
 </ion-header>
 
 <ion-content padding>
-  {{hola}}
+  <div class="container">
+    <div class="container-logo">
+      <img class="img-responsive" src="assets/imgs/round_how_to_reg_black_48dp.png" alt="Registro">
+    </div>
+    <form>
+      <div class="col-12">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="nombre">
+        </div>
+        <div class="form-group">
+          <label for="apellidos">Apellidos</label>
+          <input type="text" class="form-control" id="apellidos">
+        </div>
+        <div class="form-group">
+          <label for="domicilio">Domicilio</label>
+          <input type="text" class="form-control" id="domicilio">
+        </div>
+        <div class="form-group">
+          <label for="telefono">Telefono</label>
+          <input type="number" class="form-control" id="telefono">
+        </div>
+        <div class="form-group">
+          <label for="correo">Correo</label>
+          <input type="email" class="form-control" id="correo" placeholder="correo@example.com">
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" class="form-control" id="password">
+        </div>
+        <div class="form-group">
+          <label for="confirmar">Confirmar Contraseña</label>
+          <input type="password" class="form-control" id="confirmar">
+        </div>
+        <div class="form-group text-center">
+          <label for="codAcceso">Codigo de acceso</label>
+          <input type="text" class="form-control inp" id="codAcceso">
+        </div>
+      </div>
+    </form>
+  </div>
 </ion-content>
