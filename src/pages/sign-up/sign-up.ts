@@ -15,10 +15,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SignUpPage {
 
-  nombre:String;
+  hola:String;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.nombre='hola mundo';
+    this.hola="hola mundo";
   }
 
   ionViewDidLoad() {

@@ -13,14 +13,15 @@ export class HomePage {
 
   }
 
-  // public login(){
-  //   this.navCtrl.push(LoginPage);
-  // }
-  public login(){
+  
+  public login()
+  {
     this.navCtrl.push(LoginPage);
   }
 
-  public abrir(){
+  public abrir()
+  {
     this.navCtrl.push(SignUpPage);
   }
 }
+
