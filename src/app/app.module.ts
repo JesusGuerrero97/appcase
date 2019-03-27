@@ -12,6 +12,8 @@ import {UserProfileComponent} from "../components/user-profile/user-profile";
 import {UserActivitiesComponent} from "../components/user-activities/user-activities";
 import {UserConfigComponent} from "../components/user-config/user-config";
 import { SignUpPage } from '../pages/sign-up/sign-up';
+import { ApiClientProvider } from '../providers/api-client/api-client';
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { SignUpPage } from '../pages/sign-up/sign-up';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -43,7 +46,8 @@ import { SignUpPage } from '../pages/sign-up/sign-up';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ApiClientProvider
   ]
 })
 export class AppModule {}
