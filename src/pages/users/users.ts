@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { UserConfigurationPage } from '../user-configuration/user-configuration';
+import { ProfilePage } from '../profile/profile';
 
 /**
  * Generated class for the UsersPage page.
@@ -17,11 +19,17 @@ export class UsersPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
-  ngOnInit() {
+  public openConfig(){
+    this.navCtrl.push(UserConfigurationPage);
+  }
+  public openProfile(){
+    this.navCtrl.push(ProfilePage);
+  }
+  /*ngOnInit() {
 
     // (function(d){
 
-      let tabs = Array.prototype.slice.apply(document.querySelectorAll('.nav-item'));
+     let tabs = Array.prototype.slice.apply(document.querySelectorAll('.nav-item'));
       let panels = Array.prototype.slice.apply(document.querySelectorAll('.tab-pane'));
 
       document.getElementById('nav-tab').addEventListener('click', e=>{
@@ -44,7 +52,7 @@ export class UsersPage {
   // })(document);
 
 
-  }
+  }*/
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UsersPage');

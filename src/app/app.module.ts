@@ -14,6 +14,8 @@ import {UserConfigComponent} from "../components/user-config/user-config";
 import { SignUpPage } from '../pages/sign-up/sign-up';
 import { ApiClientProvider } from '../providers/api-client/api-client';
 import {HttpClientModule} from "@angular/common/http";
+import { UserConfigurationPage } from '../pages/user-configuration/user-configuration';
+import { ProfilePage } from '../pages/profile/profile';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import {HttpClientModule} from "@angular/common/http";
     LoginPage,
     UsersPage,
     SignUpPage,
+    ProfilePage,
+    UserConfigurationPage,
     UserProfileComponent,
     UserConfigComponent,
     UserActivitiesComponent
@@ -38,6 +42,8 @@ import {HttpClientModule} from "@angular/common/http";
     HomePage,
     LoginPage,
     SignUpPage,
+    ProfilePage,
+    UserConfigurationPage,
     UsersPage,
     UserProfileComponent,
     UserConfigComponent,
