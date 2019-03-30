@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
+import * as M from 'materialize-css';
 /**
  * Generated class for the UserConfigComponent component.
  *
@@ -12,10 +13,14 @@ import { Component } from '@angular/core';
 })
 export class UserConfigComponent {
 
-  text: string;
-
-  constructor() {
-    this.text = 'Tab 3';
+  ngOnInit()
+  {
+    $(document).ready(function() {
+      M.updateTextFields();
+    });
   }
 
 }
+
+      
+
