@@ -25,9 +25,9 @@ export class LoginPage {
 
   ionViewDidLoad() {
     let style = [
-      {color: "bg-info"},
-      {color: "bg-warning"},
-      {color: "bg-dark"}
+      {color: "blue"},
+      {color: "yellow"},
+      {color: "black"}
     ];
     this.apiClient.getClients({id: "2"})
       .subscribe(

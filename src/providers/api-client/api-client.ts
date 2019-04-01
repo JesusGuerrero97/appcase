@@ -18,5 +18,4 @@ export class ApiClientProvider {
   getClients(id: any) {
     return this.http.post(`${this.API_URI}/`, id);
   }
-
 }
