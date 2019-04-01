@@ -25,6 +25,7 @@ export class UsersPage {
   public openProfile(){
     this.navCtrl.push(ProfilePage);
   }
+  
   /*ngOnInit() {
 
     // (function(d){
