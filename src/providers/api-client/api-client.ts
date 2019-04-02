@@ -23,6 +23,6 @@ export class ApiClientProvider {
     return this.http.get(`${this.API_URI}/${id}`);
   }
   getOnePadecimiento(id: any){
-    return this.http.get(`${this.API_URI}/pad/${id}`);
+    return this.http.get(`${this.API_URI}/padi/${id}`);
   }
 }
