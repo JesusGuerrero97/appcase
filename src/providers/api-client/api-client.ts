@@ -16,8 +16,12 @@ export class ApiClientProvider {
   }
 
   getClients(id: any) {
-  	console.log("entro a get clients");
     return this.http.post(`${this.API_URI}/`, id);
   }
-
+  getOneClient(id: any){
+    return this.http.get(`${this.API_URI}/${id}`);
+  }
+  getOnePadecimiento(id: any){
+    return this.http.get(`${this.API_URI}/pad/${id}`);
+  }
 }
