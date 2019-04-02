@@ -11,26 +11,27 @@
                 <div class="row" style="margin-top:8%">
                   <p>Direccion</p>
                   <input type="text" name="Direccion" readonly [(ngModel)]="cliente.domicilio">
-
                 </div>
-                <div class="row" style="margin-top:8%">
+                <div class="row" style="margin-top:2%">
                   <p>Fecha de nacimiento</p>
-                  
-                  <input type="text" name="Direccion" readonly [(ngModel)]="cliente.fecha_nac">
                 </div>
+                <div class="row" style="margin-top:4%">
+                    <span>{{cliente.fecha_nac | date: 'dd/MM/yyyy'}}</span>
+                    <hr>
+                  </div>
                 <div class="row" style="margin-top:8%">
                   <p>Padecimientos</p>
-                  <input type="text" name="Direccion" readonly [(ngModel)]="pad.nombre">
+                  <input *ngFor="let pa of pad" type="text" name="Direccion" readonly [(ngModel)]="pa.nombre">  
                 </div>
           </div>
         </div>
-        <div class="card white">
+        <div class="card white" *ngFor="let pa of pad">
         	<div class="card-content black-text z-depth-5">
-          	<h2>Leyenda</h2>
+          	<h2>Leyenda {{pa.nombre}}</h2>
               <hr>
               <div class="row">
                 <div class="row" style="margin-top:8%">
-                  <p>{{pad.leyenda}}</p>
+                  <p>{{pa.leyenda}}</p>
                   
                 </div>
               </div>

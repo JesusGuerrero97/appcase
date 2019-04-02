@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
 import {ApiClientProvider} from "../../providers/api-client/api-client";
 
 
@@ -20,7 +19,8 @@ export class UserProfileComponent {
 
 	cliente: any = [{}];
 	pad: any = [{}];
-  constructor(public navCtrl: NavController, private apiClient: ApiClientProvider) {
+	fecha: any = [{}];
+	constructor(public navCtrl: NavController, private apiClient: ApiClientProvider) {
 	
   }
 
@@ -28,12 +28,15 @@ export class UserProfileComponent {
 	  	this.apiClient.getOneClient(2)
 	      .subscribe(
 	        res => {
-	          this.cliente = res;
-	          console.log(this.cliente);
+						this.cliente = res;
+						console.log(this.cliente.fecha_nac);	
+
 	          this.apiClient.getOnePadecimiento(this.cliente.id_cliente)
 			      .subscribe(
 			        res => {
-			          this.pad = res;
+								this.pad = res;
+								
+								//this.pad.nombre
 			          console.log(res);
 
 			        },
