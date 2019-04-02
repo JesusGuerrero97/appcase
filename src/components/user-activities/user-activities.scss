@@ -1,3 +1,22 @@
 user-activities {
 
+  #profile_image{
+    width: 28% !important;
+  }
+  #name_container{
+    margin-bottom: -2vh !important;
+  }
+
+  #config_button{
+    height: 100%;
+  }
+  #config_button i{
+    margin-top: 40%;
+  }
+  #profile_button{
+    float: right;
+    margin-right: 5%;
+    margin-left: -50%;
+    color: black;
+  }
 }

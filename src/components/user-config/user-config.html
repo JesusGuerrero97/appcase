@@ -12,8 +12,7 @@
                     <input id="presupuesto" type="text" class="validate" value="$200"/>
                     <label for="presupuesto" class="">Presupuesto</label>
                   </div>
-                </div>
-                
+                </div>    
               </div>
               <div class="row" style="clear:both">
                   <a class="waves-effect waves-light btn green">Guardar</a>
@@ -27,22 +26,23 @@
                         </label>
                       </div>
                   </div>  
-              </div>      
+              </div>  
           </div>
         </div>
       </div>
     </div>
 
     <div class="row white" style="clear:both">
-      <ul id="tabs-swipe-demo" class="tabs scr">
-          <li class="tab col s3"><a class="blue-text" (click)="tabs(0)">Snacks</a></li>
-          <li class="tab col s3"><a class="blue-text" (click)="tabs(1)">Dulces</a></li>
-          <li class="tab col s3"><a class="blue-text" (click)="tabs(2)">Bebidas</a></li>
-          <li class="tab col s3"><a class="blue-text" (click)="tabs(3)">Alimentos</a></li>
-      </ul>
-      <div [hidden]="!tab[0]" id="test-swipe-1" class="col s12 blue content">Test 1</div>
-      <div [hidden]="!tab[1]" id="test-swipe-2" class="col s12 red content">Test 2</div>
-      <div [hidden]="!tab[2]" id="test-swipe-3" class="col s12 green content">Test 3</div>
-      <div [hidden]="!tab[3]" id="test-swipe-4" class="col s12 gray content">Test 4</div>
+        <ul id="tabs-swipe-demo" class="tabs scr">
+            <li class="tab col s3"><a class="blue-text" (click)="tabs(0)">Snacks</a></li>
+            <li class="tab col s3"><a class="blue-text" (click)="tabs(1)">Dulces</a></li>
+            <li class="tab col s3"><a class="blue-text" (click)="tabs(2)">Bebidas</a></li>
+            <li class="tab col s3"><a class="blue-text" (click)="tabs(3)">Alimentos</a></li>
+        </ul>
+        <div [hidden]="!tab[0]" id="test-swipe-1" class="col s12 blue content">Test 1</div>
+        <div [hidden]="!tab[1]" id="test-swipe-2" class="col s12 red content">Test 2</div>
+        <div [hidden]="!tab[2]" id="test-swipe-3" class="col s12 green content">Test 3</div>
+        <div [hidden]="!tab[3]" id="test-swipe-4" class="col s12 gray content">Test 4</div>
     </div>
-    
+  
+

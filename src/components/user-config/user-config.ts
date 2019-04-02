@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
 import * as M from 'materialize-css';
-import  * as  $ from 'jquery';
+import {ApiConfigProvider} from "../../providers/api-config/api-config";
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 
 
@@ -14,16 +16,28 @@ import  * as  $ from 'jquery';
   selector: 'user-config',
   templateUrl: 'user-config.html'
 })
-
-
 export class UserConfigComponent {
+
+
+  constructor(public navCtrl: NavController, private apiConfig: ApiConfigProvider) {
+	
+  }
+
   ngOnInit()
   {
     $(document).ready(function() {
       M.updateTextFields();
       $('#sw').prop('checked', true);
     });
-   
+
+    
+    this.apiConfig.getPresupuesto(2)
+	      .subscribe(
+	        res => {
+	          
+	        },
+	        err => console.log(err)
+	      );
   }
 
   tab=[true,false,false,false];
@@ -35,6 +49,7 @@ export class UserConfigComponent {
       this.tab[i]=false;
     }
     this.tab[num]=true;
+
   }
 
 }
