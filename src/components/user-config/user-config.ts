@@ -27,6 +27,7 @@ export class UserConfigComponent {
   {
     $(document).ready(function() {
       M.updateTextFields();
+      $('#sw').prop('checked', true);
     });
 
     
