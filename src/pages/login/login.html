@@ -11,6 +11,7 @@
 </ion-header>
 
 <ion-content padding>
+
 <div *ngFor="let client of clientes; let i = index" class="client_container">
 
   <div class="container h-25 bg-info mt-4 p-5 rounded-lg {{client.color}}"(click)="GoUser()">

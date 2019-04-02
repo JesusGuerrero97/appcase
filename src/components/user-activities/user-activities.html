@@ -1,4 +1,49 @@
 <!-- Generated template for the UserActivitiesComponent component -->
 <div>
-  {{text}}
+
+  <div class="container">
+    <p id="profile_button" (click)="openProfile()">Ver perfil</p>
+    <div class="center-align">
+        <img id="profile_image" class="responsive-img circle" src="https://materializecss.com/images/yuna.jpg">
+    </div>
+    <div id="name_container" class="center-align">
+      <p><strong>Jorge Moreno Portillo <br><span>201603014531</span></strong></p>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col s12">
+
+
+      <div class="card white" (click)="openConfig()">
+        <div class="row">
+          <div class="col s12">
+            <div class="col s10">
+              <p class="center-align">Presupuesto $200</p>
+            </div>
+            <div id="config_button" class="col s2">
+              <i class="material-icons">keyboard_arrow_right</i>
+            </div>
+          </div>
+          <!--<div class="card-content black-text ">-->
+          <!--</div>-->
+        </div>
+      </div>
+
+      <div class="card white">
+        <div class="card-content black-text">
+          <h6>Gastos y consumo</h6>
+          <hr>
+        </div>
+      </div>
+
+      <div class="card white">
+        <div class="card-content black-text">
+          <h6>Productos más consumidos</h6>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
