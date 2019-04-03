@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+
 /*
   Generated class for the ApiClientProvider provider.
 
@@ -22,6 +23,6 @@ export class ApiClientProvider {
     return this.http.get(`${this.API_URI}/${id}`);
   }
   getOnePadecimiento(id: any){
-    return this.http.get(`${this.API_URI}/pad/${id}`);
+    return this.http.get(`${this.API_URI}/padi/${id}`);
   }
 }
