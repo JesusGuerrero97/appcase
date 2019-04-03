@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {ApiRegistroProvider} from "../../providers/api-registro/api-registro";
 
 /**
  * Generated class for the SignUpPage page.
@@ -15,10 +16,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SignUpPage {
 
-  hola:String;
+  padre: any = [];
+	
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.hola="hola mundo";
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+    private apiRegistro: ApiRegistroProvider) {
+  }
+
+  public registro()
+  {
+    console.log(this.padre);
+    this.apiRegistro.Agregar(this.padre)
+	      .subscribe(
+	        res => {	 
+            
+	        },
+	        err => console.log(err)
+	      );
+    this.padre = {};
+
   }
 
   ionViewDidLoad() {

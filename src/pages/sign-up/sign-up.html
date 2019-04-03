@@ -6,50 +6,66 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>sign_up</ion-title>
+    <ion-title>Registro</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <div class="container">
-    <div class="container-logo">
-      <img class="img-responsive" src="assets/imgs/round_how_to_reg_black_48dp.png" alt="Registro">
-    </div>
-    <form>
-      <div class="col-12">
-        <div class="form-group">
-          <label for="nombre">Nombre</label>
-          <input type="text" class="form-control" id="nombre">
+<ion-content padding class=" blue darken-2">
+  <div class="" >
+    <div class="row">
+      <div class="col s12">
+        <div class="card white">
+          <div class="card-content black-text z-depth-5">
+              <h2>Informacion personal</h2>
+              <hr>
+              <div class="row" style="margin-top:8%">
+                <p>Nombre</p>
+                <input type="text" name="nombre" [(ngModel)]="padre.nombre"
+                >
+              </div>
+              <div class="row" style="margin-top:8%">
+                <p>Apellidos</p>
+                <input type="text" name="apellidos" [(ngModel)]="padre.apellidos">
+              </div>
+              <div class="row" style="margin-top:8%">
+                <p>Direccion</p>
+                <input type="text" name="Direccion" [(ngModel)]="padre.domicilio">
+              </div>
+              <div class="row" style="margin-top:8%">
+                <p>Telefono</p>
+                <input type="text" name="tel" [(ngModel)]="padre.tel">
+              </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="apellidos">Apellidos</label>
-          <input type="text" class="form-control" id="apellidos">
+        <div class="card white">
+          <div class="card-content black-text z-depth-5">
+            <h2>Registro</h2>
+            <hr>
+            <div class="row" style="margin-top:8%">
+              <p>Correo</p>
+              <input type="text" name="correo" [(ngModel)]="padre.correo">
+            </div>
+            <div class="row" style="margin-top:8%">
+              <p>Contraseña</p>
+              <input type="password" name="contra" [(ngModel)]="padre.contrasenia">
+            </div>
+            <div class="row" style="margin-top:8%">
+              <p>Confirmar contraseña</p>
+              <input type="password" name="contra3"[(ngModel)]="padre.confir">
+            </div>
+            <div class="row" style="margin-top:8%">
+              <p>Codigo de acceso</p>
+              <input type="text" name="tel" [(ngModel)]="padre.codigo">
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="domicilio">Domicilio</label>
-          <input type="text" class="form-control" id="domicilio">
-        </div>
-        <div class="form-group">
-          <label for="telefono">Telefono</label>
-          <input type="number" class="form-control" id="telefono">
-        </div>
-        <div class="form-group">
-          <label for="correo">Correo</label>
-          <input type="email" class="form-control" id="correo" placeholder="correo@example.com">
-        </div>
-        <div class="form-group">
-          <label for="password">Contraseña</label>
-          <input type="password" class="form-control" id="password">
-        </div>
-        <div class="form-group">
-          <label for="confirmar">Confirmar Contraseña</label>
-          <input type="password" class="form-control" id="confirmar">
-        </div>
-        <div class="form-group text-center">
-          <label for="codAcceso">Codigo de acceso</label>
-          <input type="text" class="form-control inp" id="codAcceso">
+        <div class="row center-align">
+          <div class="col s12 text-center">  
+              <button class="waves-effect waves-light btn green" (click)="registro()">Registrarse</button>
         </div>
       </div>
-    </form>
+      </div>
+    </div>
   </div>
+  
 </ion-content>

@@ -3,6 +3,7 @@ import * as $ from 'jquery';
 import * as M from 'materialize-css';
 import {ApiConfigProvider} from "../../providers/api-config/api-config";
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { shiftInitState } from '@angular/core/src/view';
 
 
 
@@ -18,7 +19,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class UserConfigComponent {
 
-
+  cliente: any = {};
+	productos: any = [{}];
   constructor(public navCtrl: NavController, private apiConfig: ApiConfigProvider) {
 	
   }
@@ -30,14 +32,26 @@ export class UserConfigComponent {
       $('#sw').prop('checked', true);
     });
 
-    
-    this.apiConfig.getPresupuesto(2)
-	      .subscribe(
+    this.apiConfig.getClientes({id: 2})
+	      .subscribe( 
 	        res => {
-	          
+            this.cliente= res[0];
+            console.log(this.cliente.presupuesto);
+            $(function(){
+              M.updateTextFields();
+            });
 	        },
 	        err => console.log(err)
-	      );
+        );
+  
+    this.apiConfig.getProductos({id: 2})
+    .subscribe( 
+      res => {
+        this.productos= res;
+        console.log(this.productos);
+      },
+      err => console.log(err)
+    );
   }
 
   tab=[true,false,false,false];

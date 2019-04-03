@@ -9,7 +9,7 @@
                 <p>Presupuesto por semana</p>
                 <div style="margin-top:10%">
                   <div class="input-field col s12">
-                    <input id="presupuesto" type="text" class="validate" value="$200"/>
+                    <input id="presupuesto" type="text" class="validate" [(ngModel)]="cliente.presupuesto"/>
                     <label for="presupuesto" class="">Presupuesto</label>
                   </div>
                 </div>    
@@ -39,10 +39,26 @@
             <li class="tab col s3"><a class="blue-text" (click)="tabs(2)">Bebidas</a></li>
             <li class="tab col s3"><a class="blue-text" (click)="tabs(3)">Alimentos</a></li>
         </ul>
-        <div [hidden]="!tab[0]" id="test-swipe-1" class="col s12 blue content">Test 1</div>
-        <div [hidden]="!tab[1]" id="test-swipe-2" class="col s12 red content">Test 2</div>
-        <div [hidden]="!tab[2]" id="test-swipe-3" class="col s12 green content">Test 3</div>
-        <div [hidden]="!tab[3]" id="test-swipe-4" class="col s12 gray content">Test 4</div>
+        <div [hidden]="!tab[0]" id="test-swipe-1" class="col s12 white content">
+          <div class="row">
+            <div class="col s12">
+          
+              <div class="col s6" *ngFor="let producto of productos; let i = index">
+                  <div class="card blue-grey darken-1"  >
+                    <div class="card-content white-text">
+                      {{producto.nombre}}
+                    </div>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div [hidden]="!tab[1]" id="test-swipe-2" class="col s12 white content">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut repudiandae earum reiciendis distinctio aperiam assumenda provident soluta alias eligendi, cum quam dolor nostrum, ea expedita quia temporibus accusamus sequi?</p>
+        </div>
+        <div [hidden]="!tab[2]" id="test-swipe-3" class="col s12 white content">Test 3</div>
+        <div [hidden]="!tab[3]" id="test-swipe-4" class="col s12 white content">Test 4</div>
     </div>
   
 
