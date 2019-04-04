@@ -14,8 +14,14 @@ export class ApiConfigProvider {
 
   constructor(public http: HttpClient) {
   }
-  getPresupuesto(id: any) {
+
+  getClientes(id: any) {
     return this.http.post(`${this.API_URI}/config/`, id);
+  }
+
+  getProductos(id:any)
+  {
+    return this.http.post(`${this.API_URI}/config/pr`, id);
   }
 
 }
