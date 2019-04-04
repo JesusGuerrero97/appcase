@@ -17,6 +17,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { UserConfigurationPage } from '../pages/user-configuration/user-configuration';
 import { ProfilePage } from '../pages/profile/profile';
 import { ApiConfigProvider } from '../providers/api-config/api-config';
+import {ApiRegistroProvider} from '../providers/api-registro/api-registro';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { ApiConfigProvider } from '../providers/api-config/api-config';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiClientProvider,
-    ApiConfigProvider
+    ApiConfigProvider,
+    ApiRegistroProvider
   ]
 })
 export class AppModule {}

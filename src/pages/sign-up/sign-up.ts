@@ -17,6 +17,8 @@ import {ApiRegistroProvider} from "../../providers/api-registro/api-registro";
 export class SignUpPage {
 
   padre: any = [];
+  cliente: any = [];
+  login: any = [];
 	
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
@@ -27,12 +29,16 @@ export class SignUpPage {
   {
     console.log(this.padre);
     this.apiRegistro.Agregar(this.padre)
-	      .subscribe(
-	        res => {	 
-            
-	        },
-	        err => console.log(err)
-	      );
+    .subscribe(
+      res => {
+        console.log("entro al subscribe");
+        
+        //this.pad.nombre
+        console.log(res);
+
+      },
+      err => console.log(err)
+    );
     this.padre = {};
 
   }

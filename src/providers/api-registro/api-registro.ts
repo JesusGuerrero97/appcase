@@ -16,9 +16,12 @@ export class ApiRegistroProvider {
     console.log('Hello ApiRegistroProvider Provider');
 
   }
-  Agregar(id: any) {
-    return this.http.post(`${this.API_URI}/`, id);
-    //return console.log(id);
+  Agregar(body: any) {
+    console.log("entra ala funcion del provider");
+    console.log(body);
+    console.log(`${this.API_URI}/registro`);
+    return this.http.post(`${this.API_URI}/registro`, body);
+    //return console.log(id); 
   }
 
 }
