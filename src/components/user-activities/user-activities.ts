@@ -3,6 +3,7 @@ import {UserConfigurationPage} from "../../pages/user-configuration/user-configu
 import {ProfilePage} from "../../pages/profile/profile";
 import {NavController, NavParams} from "ionic-angular";
 
+
 /**
  * Generated class for the UserActivitiesComponent component.
  *
@@ -17,8 +18,9 @@ export class UserActivitiesComponent {
 
   text: string;
 
-  constructor(public navCtrl: NavController) {
-  }
+  constructor(public navCtrl: NavController) {}
+
+  public doughnutChartLabels: string[] = ["Me","Myself","Jorge"];
 
   public openConfig(){
     this.navCtrl.push(UserConfigurationPage);
