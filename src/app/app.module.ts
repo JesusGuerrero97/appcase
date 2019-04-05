@@ -18,6 +18,7 @@ import { UserConfigurationPage } from '../pages/user-configuration/user-configur
 import { ProfilePage } from '../pages/profile/profile';
 import { ApiConfigProvider } from '../providers/api-config/api-config';
 import {ApiRegistroProvider} from '../providers/api-registro/api-registro';
+import { ApiChartsProvider } from '../providers/api-charts/api-charts';
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import {ApiRegistroProvider} from '../providers/api-registro/api-registro';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -57,7 +58,8 @@ import {ApiRegistroProvider} from '../providers/api-registro/api-registro';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiClientProvider,
     ApiConfigProvider,
-    ApiRegistroProvider
+    ApiRegistroProvider,
+    ApiChartsProvider
   ]
 })
 export class AppModule {}
