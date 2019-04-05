@@ -22,6 +22,7 @@ declare var google;
 })
 export class UserActivitiesComponent {
 
+  ID;
   cliente: any = {};
   text: string;
   cats: any;
@@ -31,7 +32,7 @@ export class UserActivitiesComponent {
   ];
 
   constructor(public navCtrl: NavController, private apiClient: ApiClientProvider, public apiCharts: ApiChartsProvider) {
-
+    this.ID = apiClient.ID;
   }
 
   public openConfig(){
@@ -43,7 +44,7 @@ export class UserActivitiesComponent {
   ngOnInit(){
     this.drawChart2();
 
-    this.apiClient.getOneClient(2)
+    this.apiClient.getOneClient(this.ID)
       .subscribe(err=>{
 
         this.cliente = err;
@@ -101,7 +102,7 @@ export class UserActivitiesComponent {
         this.cats = res;
 
         setTimeout(function () {
-          clss.getStat(2);
+          clss.getStat(clss.ID);
         },150);
 
       },
