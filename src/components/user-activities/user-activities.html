@@ -1,26 +1,24 @@
 <!-- Generated template for the UserActivitiesComponent component -->
 
-<div>
+<div style="background-color: #CCC">
 
-  <div class="container">
-    <p id="profile_button" (click)="openProfile()">Ver perfil</p>
+  <div class="cyan darken-4 white-text">
+    <p style="margin-right: 10%; margin-top: 5%" class="white-text" id="profile_button" (click)="openProfile()">Ver perfil</p>
     <div class="center-align">
-        <img id="profile_image" class="responsive-img circle" src="https://materializecss.com/images/yuna.jpg">
+        <img style="margin-top: 5%; margin-bottom: -3%;" id="profile_image" class="responsive-img circle" src="{{ cliente.ruta_img }}">
     </div>
     <div id="name_container" class="center-align">
-      <p><strong>Jorge Moreno Portillo <br><span>201603014531</span></strong></p>
+      <p><strong>{{ cliente.nombre }} {{ cliente.apellidos }}<br><span>{{ cliente.numero_referencia }}</span></strong></p>
     </div>
   </div>
 
   <div class="row">
     <div class="col s12">
-
-
       <div class="card white" (click)="openConfig()">
         <div class="row">
           <div class="col s12">
             <div class="col s10">
-              <p class="center-align">Presupuesto $200</p>
+              <p class="center-align">Presupuesto ${{ cliente.presupuesto }}</p>
             </div>
             <div id="config_button" class="col s2">
               <i class="material-icons">keyboard_arrow_right</i>
@@ -45,8 +43,17 @@
           <h6>Productos más consumidos</h6>
           <hr>
 
-          <div class="row">
-            
+          <div *ngFor="let cat of catGastos">
+            <div class="row">
+              <div class="col s12">
+                <div class="col s9">
+                  <p>{{ cat.nombre }}</p>
+                </div>
+                <div class="col s3">
+                  <p>$ {{ cat.gasto }}</p>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>

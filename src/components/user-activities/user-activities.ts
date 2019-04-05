@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import {UserConfigurationPage} from "../../pages/user-configuration/user-configuration";
 import {ProfilePage} from "../../pages/profile/profile";
-import {NavController, NavParams} from "ionic-angular";
+import {NavController} from "ionic-angular";
 
 import {ApiChartsProvider} from "../../providers/api-charts/api-charts";
 
 import * as $ from "jquery";
 import * as M from "materialize-css";
+import {ApiClientProvider} from "../../providers/api-client/api-client";
 
 declare var google;
 /**
@@ -21,13 +22,15 @@ declare var google;
 })
 export class UserActivitiesComponent {
 
+  cliente: any = {};
   text: string;
   cats: any;
+  catGastos: any;
   stat = [
     ['Task', 'Hours per Day']
   ];
 
-  constructor(public navCtrl: NavController, navParams: NavParams, public apiCharts: ApiChartsProvider) {
+  constructor(public navCtrl: NavController, private apiClient: ApiClientProvider, public apiCharts: ApiChartsProvider) {
 
   }
 
@@ -38,7 +41,16 @@ export class UserActivitiesComponent {
     this.navCtrl.push(ProfilePage);
   }
   ngOnInit(){
-    this.drawChart2()
+    this.drawChart2();
+
+    this.apiClient.getOneClient(2)
+      .subscribe(err=>{
+
+        this.cliente = err;
+
+      }, onErr=>{
+        console.log(onErr)
+      });
   }
 
   getStat(id){
@@ -50,6 +62,22 @@ export class UserActivitiesComponent {
           res=>{
             // @ts-ignore
             clss.stat.push([item.descripcion, res.num])
+            // {cat: item.descripcion, value: res.num}
+          },
+          err=>{
+            console.log(err)
+          }
+        )
+
+    });
+
+    //meter gastos
+    this.cats.forEach(function (item) {
+      clss.apiCharts.getGastos(id)
+        .subscribe(
+          res=>{
+            // @ts-ignore
+            clss.catGastos = res;
             // {cat: item.descripcion, value: res.num}
           },
           err=>{
@@ -104,6 +132,8 @@ export class UserActivitiesComponent {
       chart.draw(data, options);
 
   }
+
+
 
 
 }

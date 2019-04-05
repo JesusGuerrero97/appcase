@@ -21,4 +21,8 @@ export class ApiChartsProvider {
     return this.http.get(`${this.API_URI}/categorias/get/${id}/cli/${id_cli}`);
   }
 
+  getGastos(id){
+    return this.http.get(`${this.API_URI}/categorias/get/${id}/gastos`)
+  }
+
 }
