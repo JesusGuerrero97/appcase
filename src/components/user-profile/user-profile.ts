@@ -25,7 +25,7 @@ export class UserProfileComponent {
   }
 
   ngOnInit(){
-	  	this.apiClient.getOneClient(this.apiClient.CLIENTE_ID)
+	  	this.apiClient.getOneClient(this.apiClient.ID)
 	      .subscribe(
 	        res => {
 						this.cliente = res;
