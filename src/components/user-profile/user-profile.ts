@@ -25,26 +25,20 @@ export class UserProfileComponent {
   }
 
   ngOnInit(){
-	  	this.apiClient.getOneClient(2)
+	  	this.apiClient.getOneClient(this.apiClient.CLIENTE_ID)
 	      .subscribe(
 	        res => {
 						this.cliente = res;
 						console.log(this.cliente.fecha_nac);	
-
 	          this.apiClient.getOnePadecimiento(this.cliente.id_cliente)
 			      .subscribe(
 			        res => {
-								this.pad = res;
-								
+								this.pad = res;		
 								//this.pad.nombre
 			          console.log(res);
-
 			        },
 			        err => console.log(err)
 			      );
-			
-	         
-
 	        },
 	        err => console.log(err)
 	      );
