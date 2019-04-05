@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ApiConfigProvider {
 
-  API_URI = 'http://localhost:3000';
+  API_URI = 'http://192.168.137.1:3000';
 
   constructor(public http: HttpClient) {
   }
@@ -19,9 +19,24 @@ export class ApiConfigProvider {
     return this.http.post(`${this.API_URI}/config/`, id);
   }
 
-  getProductos(id:any)
+  getProductos()
   {
-    return this.http.post(`${this.API_URI}/config/pr`, id);
+    return this.http.get(`${this.API_URI}/config/pr`);
+  }
+
+  getBloqueados(id_cliente:any)
+  {
+    return this.http.post(`${this.API_URI}/config/block`,id_cliente);
+  }
+
+  updateBlock(array_block:any)
+  {
+    return this.http.post(`${this.API_URI}/config/bloquear`,array_block);
+  }
+
+  updatePresupuesto(cliente:any)
+  {
+    return this.http.put(`${this.API_URI}/config/updatePresupuesto`,cliente);
   }
 
 }
