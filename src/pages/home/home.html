@@ -16,13 +16,13 @@
         <form class="">
           <div class="row">
             <div class="input-field col s12">
-              <input id="email" type="email" class="validate black-text">
+              <input name="email" type="email" class="validate black-text" [(ngModel)]= "login.email">
               <label for="email">Email</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="password" type="password" class="validate black-text">
+              <input name="password"  type="password" class="validate black-text" [(ngModel)]= "login.password">
               <label for="password">Password</label>
             </div>
           </div>
@@ -32,7 +32,7 @@
           <div>&sbnp</div>
           <div class="row">
               <div class="col text-center">
-                  <button class="waves-effect waves-light btn green" (click)="login()">Login</button>
+                  <button class="waves-effect waves-light btn green" (click)="entrar()">Login</button>
                   <button class="waves-effect waves-light btn blue" (click)="abrir()">Registrar</button>
               </div>
           </div>

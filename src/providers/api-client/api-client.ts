@@ -12,6 +12,7 @@ import { Injectable } from '@angular/core';
 export class ApiClientProvider {
 
   API_URI = 'http://localhost:3000';
+  CLIENTE_ID = null;
 
   constructor(public http: HttpClient) {
   }

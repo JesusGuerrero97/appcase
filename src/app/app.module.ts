@@ -3,7 +3,6 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {LoginPage} from "../pages/login/login";
@@ -17,6 +16,9 @@ import {HttpClientModule} from "@angular/common/http";
 import { UserConfigurationPage } from '../pages/user-configuration/user-configuration';
 import { ProfilePage } from '../pages/profile/profile';
 import { ApiConfigProvider } from '../providers/api-config/api-config';
+import {ApiRegistroProvider} from '../providers/api-registro/api-registro';
+import { ApiChartsProvider } from '../providers/api-charts/api-charts';
+import { ApiLoginProvider } from '../providers/api-login/api-login';
 
 
 @NgModule({
@@ -35,7 +37,7 @@ import { ApiConfigProvider } from '../providers/api-config/api-config';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -55,7 +57,10 @@ import { ApiConfigProvider } from '../providers/api-config/api-config';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiClientProvider,
-    ApiConfigProvider
+    ApiConfigProvider,
+    ApiRegistroProvider,
+    ApiChartsProvider,
+    ApiLoginProvider
   ]
 })
 export class AppModule {}
