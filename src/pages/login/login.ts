@@ -49,7 +49,9 @@ export class LoginPage {
       );
   }
 
-  public GoUser(){
+  public GoUser(index){
+
+    this.apiClient.ID = this.clientes[index].id_cliente;
     this.navCtrl.push(UsersPage);
   }
 

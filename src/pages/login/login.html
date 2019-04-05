@@ -14,7 +14,7 @@
 
 <div *ngFor="let client of clientes; let i = index" class="client_container">
 
-  <div class="container h-25 bg-info mt-4 p-5 rounded-lg {{client.color}}"(click)="GoUser()">
+  <div class="container h-25 bg-info mt-4 p-5 rounded-lg {{client.color}}"(click)="GoUser(i)">
     <h2 class="text-white-50 text-center">{{client.nombre}} {{client.apellidos}}</h2>
     <p class="text-center text-white-50">{{client.fecha_nac | date: 'dd/MM/yyyy'}}</p>
   </div>
