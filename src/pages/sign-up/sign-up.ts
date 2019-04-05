@@ -18,7 +18,8 @@ export class SignUpPage {
 
   padre: any = [];
   cliente: any = [];
-  login: any = [];
+  login: any = {};
+  registroPadre: any = {};
 	
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
@@ -27,24 +28,35 @@ export class SignUpPage {
 
   public registro()
   {
-    console.log(this.padre);
+    this.registroPadre.password = this.login.password;
+    
     this.apiRegistro.Agregar(this.padre)
     .subscribe(
       res => {
-        console.log("entro al subscribe");
-        
-        //this.pad.nombre
-        console.log(res);
-
+        this.login.id_padre= res;
+        this.registroPadre.id_padre = this.login.id_padre;      
+        this.agregar(this.registroPadre);
       },
       err => console.log(err)
     );
+    this.login = {};
     this.padre = {};
-
+    this.cliente = {};
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignUpPage');
+  }
+
+  public agregar(padre : any)
+  {
+    this.apiRegistro.AgregarLogin(padre)
+            .subscribe(
+              res => {
+                console.log(res);
+              },
+              err => console.log(err)
+            );
   }
 
 }
