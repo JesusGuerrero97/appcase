@@ -13,12 +13,14 @@
 <ion-content padding>
 
 <div *ngFor="let client of clientes; let i = index" class="client_container">
+    <div class="cyan darken-4 white-text">
   <div class="center-align">
     <img style="margin-top: 5%; margin-bottom: -3%;" id="profile_image" class="responsive-img circle" src="{{ client.ruta_img }}">
 </div>
-  <div class="container h-25 bg-info mt-4 p-5 rounded-lg {{client.color}}"(click)="GoUser(i)">
+  <div class="container h-25 bg-info mt-4 p-5 rounded-lg "(click)="GoUser(i)">
     <h2 class="text-white-50 text-center">{{client.nombre}} {{client.apellidos}}</h2>
     <p class="text-center text-white-50">{{client.fecha_nac | date: 'dd/MM/yyyy'}}</p>
+  </div>
   </div>
 
   <!--<div class="container bg-warning h-25 mt-4 p-5 rounded-lg" (click)="GoUser()">-->
