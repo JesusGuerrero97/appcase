@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {ApiRegistroProvider} from "../../providers/api-registro/api-registro";
+import * as M from 'materialize-css';
 
 /**
  * Generated class for the SignUpPage page.
@@ -54,6 +55,9 @@ export class SignUpPage {
             .subscribe(
               res => {
                 console.log(res);
+                if(res){
+                  M.toast({html:'Se agrego con exito'})
+                }
               },
               err => console.log(err)
             );

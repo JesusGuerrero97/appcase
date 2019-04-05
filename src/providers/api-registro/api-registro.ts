@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ApiRegistroProvider {
 
-  API_URI = 'http://10.10.5.91:3000';
+  API_URI = 'http://localhost:3000';
 
   constructor(public http: HttpClient) {
     console.log('Hello ApiRegistroProvider Provider');
