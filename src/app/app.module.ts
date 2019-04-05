@@ -3,7 +3,6 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {LoginPage} from "../pages/login/login";
@@ -19,6 +18,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { ApiConfigProvider } from '../providers/api-config/api-config';
 import {ApiRegistroProvider} from '../providers/api-registro/api-registro';
 import { ApiChartsProvider } from '../providers/api-charts/api-charts';
+import { ApiLoginProvider } from '../providers/api-login/api-login';
 
 
 @NgModule({
@@ -59,7 +59,8 @@ import { ApiChartsProvider } from '../providers/api-charts/api-charts';
     ApiClientProvider,
     ApiConfigProvider,
     ApiRegistroProvider,
-    ApiChartsProvider
+    ApiChartsProvider,
+    ApiLoginProvider
   ]
 })
 export class AppModule {}

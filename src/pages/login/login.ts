@@ -18,7 +18,7 @@ import {ApiClientProvider} from "../../providers/api-client/api-client";
 export class LoginPage {
 
   clientes: any = [{}];
-  cl = {id: "2"};
+  public cl = {id: "2"};
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private apiClient: ApiClientProvider) {
   }
@@ -29,20 +29,14 @@ export class LoginPage {
       {color: "yellow"},
       {color: "black"}
     ];
-    this.apiClient.getClients({id: "2"})
+    this.apiClient.getClients(this.apiClient.CLIENTE_ID)
       .subscribe(
         res => {
           this.clientes = res;
-
           let count = this.clientes.length;
-
-
             let j = 0;
             for(var i = 0; i< count; i++){
 
-             /* if(j > style.length){
-                j = 0;
-              }*/
               this.clientes[i].color = style[j].color;
               j++;
               if(j>=style.length)
@@ -50,18 +44,6 @@ export class LoginPage {
                 j=0;
               }
             }
-
-
-          // let rows = Array.prototype.slice.apply(document.querySelectorAll('.client_container'));
-          //
-          // console.log(rows)
-          // let i = 0;
-          // rows.forEach(function (item) {
-          //   item.classList.add(style[i].color);
-          // });
-          // if(i>style.length){
-          //   i = 0;
-          // }
         },
         err => console.log(err)
       );

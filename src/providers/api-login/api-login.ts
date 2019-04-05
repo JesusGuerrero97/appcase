@@ -15,5 +15,12 @@ export class ApiLoginProvider {
   constructor(public http: HttpClient) {
     console.log('Hello ApiLoginProvider Provider');
   }
+  ingresar(body: any) {
+    console.log("entra va a la funcion del login");
+    console.log(body);
+    console.log(`${this.API_URI}/login`);
+    return this.http.post(`${this.API_URI}/login`, body);
+    //return console.log(id); 
+  }
 
 }
