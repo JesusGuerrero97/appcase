@@ -7,6 +7,41 @@ user-config {
     }
     .content
     {
-        height: 60vh;
+        height: 55vh;
     }
+    ul>li>a.active{
+        color:black;
+    }
+    a.none{
+        color:red !important;
+    }
+    a.borbot
+    {
+        border-bottom: 2px solid black;       
+    }
+    div.producnone
+    {
+        display: none;
+    }
+
+    div.productoselect.active
+    {
+        background-color: #9e9e9e !important;
+        box-shadow:none;
+    }
+
+    .mt-10
+    {
+        margin-top: 5%;
+    }
+
+    div.positionbot
+    {
+        position: fixed;
+    }
+    .btnGuardar:active
+    {
+        background-color: #81c784 !important;
+    }
+
 }
